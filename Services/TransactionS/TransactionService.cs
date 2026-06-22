@@ -18,9 +18,9 @@ namespace Api.Services.TransactionS
             {   
                 var FromAccount = await this.context.Accounts.FirstOrDefaultAsync(a => a.Id == FromAccountId);
                 var ToAccount = await this.context.Accounts.FirstOrDefaultAsync(a => a.Id == ToAccountId);
-                
+
                 if(FromAccountId == ToAccountId)
-                throw new Exception("Não é possível fazer esta operação");
+                throw new Exception("Não é possível fazer esta operação!");
 
                 if (FromAccount == null)
                 throw new Exception("Conta de origem não encontrada");
